@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import path from "path"
 
 
-import { AdminRoute , ShoppingRoute, VandorRoute} from "../routes"
+import { AdminRoute , CustomerRoute, ShoppingRoute, VandorRoute} from "../routes"
 
 
 export default async(app : Application) => {
@@ -14,6 +14,7 @@ export default async(app : Application) => {
     app.use('/admin', AdminRoute)
     app.use('/vandor', VandorRoute)
     app.use('/shopping' , ShoppingRoute)
+    app.use('/customer', CustomerRoute)
     app.use('/',(req:any,res:any)=>{
         return res.json("Hello from food order Backend!")
     })
